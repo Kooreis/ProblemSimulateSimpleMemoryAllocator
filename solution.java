@@ -1,11 +1,8 @@
-import java.util.LinkedList;
+class MemoryAllocator {
+    LinkedList<Block> freeBlocks;
 
-class Block {
-    int size;
-    byte[] memory;
-
-    public Block(int size) {
-        this.size = size;
-        this.memory = new byte[size];
+    public MemoryAllocator(int totalSize) {
+        freeBlocks = new LinkedList<>();
+        freeBlocks.add(new Block(totalSize));
     }
 }
